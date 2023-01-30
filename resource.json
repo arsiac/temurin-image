@@ -1,0 +1,18 @@
+[
+    {
+        "type": "jre",
+        "name": "temurin-jre8",
+        "version": "8u352b08",
+        "url": "https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u352-b08/OpenJDK8U-jre_x64_alpine-linux_hotspot_8u352b08.tar.gz",
+        "filename": "OpenJDK8U-jre_x64_alpine-linux_hotspot_8u352b08.tar.gz",
+        "extractRoot": "jdk8u352-b08-jre"
+    },
+    {
+        "type": "jre",
+        "name": "temurin-jre8",
+        "version": "8u362b09",
+        "url": "https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u362-b09/OpenJDK8U-jre_x64_alpine-linux_hotspot_8u362b09.tar.gz",
+        "filename": "OpenJDK8U-jre_x64_alpine-linux_hotspot_8u362b09.tar.gz",
+        "extractRoot": "jdk8u362-b09-jre"
+    }
+]
