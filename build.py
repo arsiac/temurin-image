@@ -140,13 +140,14 @@ def operation_build(name, version):
 
     print(f'\rExtract to {extract_target}')
     decompress(file_location, extract_target)
+
+    # build
     build_cmd = "docker build -q " \
                 f"-t {library}/{name}:{version}-alpine " \
                 f"--build-arg Package={docker_package} " \
                 f"--build-arg FolderName={name} {script_dir}"
 
     print(f'Building {name}:{version}...')
-    print(build_cmd)
     os.system(build_cmd)
 
 

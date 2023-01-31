@@ -1,4 +1,5 @@
 FROM alpine
+LABEL repo=https://github.com/arsiac/temurin-image
 WORKDIR /
 ARG Package
 ARG FolderName
