@@ -59,8 +59,11 @@ def init_args():
 
 def init_resource():
     global resource_json
-    with open(f'{script_dir}{os.sep}resource.json', 'r', encoding='utf-8') as f:
-        resource_json = json.load(f)
+    resource_dir = f'{script_dir}{os.sep}resource'
+    for filename in os.listdir(resource_dir):
+        if filename.endswith(".json"):
+            with open(f'{resource_dir}{os.sep}{filename}', 'r', encoding='utf-8') as f:
+                resource_json.extend(json.load(f))
 
 
 def decompress(file_path: str, extract_path: str):
@@ -88,8 +91,14 @@ def rm(file_path):
 
 def operation_list(ltype):
     res_list = [i for i in resource_json if 'all' == ltype or i['type'] == ltype]
+    template = "{: <15}\t{: <20}\t{: <20}"
+    print(template.format('Base', 'Name', 'Version'))
+    print(55 * 'ˉ')
     for item in res_list:
-        print(item['name'], item['version'])
+        item_base = item['base']
+        item_name = item['name']
+        item_version = item['version']
+        print(template.format(item_base, item_name, item_version))
 
 
 def operation_build(name, version):
@@ -142,13 +151,21 @@ def operation_build(name, version):
     decompress(file_location, extract_target)
 
     # build
+    target_base = target['base']
+    target_cmd_tag = ''
+    for tag in target['tag']:
+        target_cmd_tag = target_cmd_tag + f'-t {library}/{name}:{tag} '
+
     build_cmd = "docker build -q " \
-                f"-t {library}/{name}:{version}-alpine " \
+                f"-f docker/{target_base}.Dockerfile " \
                 f"--build-arg Package={docker_package} " \
-                f"--build-arg FolderName={name} {script_dir}"
+                f"--build-arg FolderName={name} " \
+                f"{target_cmd_tag}{script_dir}"
 
     print(f'Building {name}:{version}...')
     os.system(build_cmd)
+    print(f'Clean {docker_package}')
+    rm(docker_package)
 
 
 if __name__ == "__main__":
