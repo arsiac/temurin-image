@@ -46,5 +46,21 @@
     "url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.6%2B10/OpenJDK17U-jre_x64_alpine-linux_hotspot_17.0.6_10.tar.gz",
     "filename": "OpenJDK17U-jre_x64_alpine-linux_hotspot_17.0.6_10.tar.gz",
     "extractRoot": "jdk-17.0.6+10-jre"
+  },
+  {
+    "type": "jre",
+    "base": "alpine",
+    "name": "temurin-jre17",
+    "version": "17.0.7_7",
+    "tag": [
+      "17.0.7_7-alpine",
+      "17.0.7-alpine",
+      "17.0.7_7",
+      "17.0.7",
+      "latest"
+    ],
+    "url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%2B7/OpenJDK17U-jre_x64_alpine-linux_hotspot_17.0.7_7.tar.gz",
+    "filename": "OpenJDK17U-jre_x64_alpine-linux_hotspot_17.0.7_7.tar.gz",
+    "extractRoot": "jdk-17.0.7+7-jre"
   }
 ]
