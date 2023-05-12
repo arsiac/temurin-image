@@ -46,5 +46,21 @@
         "url": "https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jre_x64_alpine-linux_hotspot_11.0.18_10.tar.gz",
         "filename": "OpenJDK11U-jre_x64_alpine-linux_hotspot_11.0.18_10.tar.gz",
         "extractRoot": "jdk-11.0.18+10-jre"
+    },
+    {
+        "type": "jre",
+        "base": "alpine",
+        "name": "temurin-jre11",
+        "version": "11.0.19_7",
+        "tag": [
+            "11.0.19_7-alpine",
+            "11.0.19-alpine",
+            "11.0.19_7",
+            "11.0.19",
+            "latest"
+        ],
+        "url": "https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.19%2B7/OpenJDK11U-jre_x64_alpine-linux_hotspot_11.0.19_7.tar.gz",
+        "filename": "OpenJDK11U-jre_x64_alpine-linux_hotspot_11.0.19_7.tar.gz",
+        "extractRoot": "jdk-11.0.19+7-jre"
     }
 ]
